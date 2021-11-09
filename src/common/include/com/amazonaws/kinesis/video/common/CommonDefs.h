@@ -498,8 +498,8 @@ typedef CID*                PCID;
 #include <string.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <sys/stat.h>  //Test for AmebaPro
-#include <FreeRTOS_POSIX/errno.h>
+#include <sys/stat.h>
+#include <errno.h>
 #include <ctype.h>
 #include <time.h>
 
