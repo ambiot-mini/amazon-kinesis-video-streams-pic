@@ -253,7 +253,7 @@ extern "C" {
 /**
  * Max len of the fully qualified URI
  */
-#define MAX_URI_CHAR_LEN                         4096
+#define MAX_URI_CHAR_LEN                         10*1024
 
 /**
  * Minimal storage allocation size = MIN heap size

@@ -27,7 +27,10 @@ static inline VOID defaultAtomicStore(volatile SIZE_T* pAtomic, SIZE_T var)
 
 static inline SIZE_T defaultAtomicExchange(volatile SIZE_T* pAtomic, SIZE_T var)
 {
-    return __atomic_exchange_n(pAtomic, var, __ATOMIC_SEQ_CST);
+    //return __atomic_exchange_n(pAtomic, var, __ATOMIC_SEQ_CST);
+    SIZE_T Atomic_pre = *pAtomic;  /*Amebapro2 workaround*/
+    *pAtomic = var;
+    return Atomic_pre;
 }
 
 static inline BOOL defaultAtomicCompareExchange(volatile SIZE_T* pAtomic, SIZE_T* pExpected, SIZE_T desired)
